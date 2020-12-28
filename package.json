@@ -6,14 +6,15 @@
     "main": "dist/src/index.js",
     "license": "Apache-2.0",
     "files": [
-        "/dist"
+        "/dist",
+        "LICENSE",
+        "package.json"
     ],
     "scripts": {
         "lint": "eslint src --ext .ts",
         "lint:fix": "eslint src tests --fix --ext .ts",
         "cleardir": "rimraf dist/*",
         "compile": "tsc",
-        "prepublishOnly": "yarn build && yarn update-md",
         "build": "yarn cleardir && yarn compile",
         "test": "ava --verbose tests/index.ts"
     },
