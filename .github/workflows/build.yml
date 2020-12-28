@@ -19,17 +19,11 @@ jobs:
       with:
         node-version: 14
 
-    - name: Restore CI Cache
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
-
     - name: Install Dependencies
       run: yarn
 
     - name: Build and Push
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: |
         #!/bin/bash
         set -euxo pipefail
