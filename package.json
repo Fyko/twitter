@@ -1,0 +1,88 @@
+{
+    "name": "@fyko/twitter",
+    "version": "0.1.0",
+    "description": "A modern Twitter API wrapper.",
+    "author": "Carter Himmel",
+    "main": "dist/src/index.js",
+    "license": "Apache-2.0",
+    "files": [
+        "/dist"
+    ],
+    "scripts": {
+        "lint": "eslint src --ext .ts",
+        "lint:fix": "eslint src tests --fix --ext .ts",
+        "cleardir": "rimraf dist/*",
+        "compile": "tsc",
+        "prepublishOnly": "yarn build && yarn update-md",
+        "build": "yarn cleardir && yarn compile",
+        "test": "ava --verbose tests/index.ts"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.1",
+        "oauth-1.0a": "^2.2.6"
+    },
+    "devDependencies": {
+        "@ava/typescript": "^1.1.1",
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-angular": "^11.0.0",
+        "@types/node-fetch": "^2.5.7",
+        "@typescript-eslint/eslint-plugin": "^4.11.1",
+        "@typescript-eslint/parser": "^4.11.1",
+        "ava": "^3.14.0",
+        "eslint": "^7.16.0",
+        "eslint-config-marine": "^8.0.1",
+        "eslint-config-prettier": "^7.1.0",
+        "eslint-plugin-prettier": "^3.3.0",
+        "husky": "^4.3.6",
+        "prettier": "^2.2.1",
+        "rimraf": "^3.0.2",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.1.3"
+    },
+    "eslintConfig": {
+        "extends": "marine/prettier/node",
+        "rules": {
+            "@typescript-eslint/naming-convention": 0,
+            "@typescript-eslint/no-namespace": 0
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-angular"
+        ],
+        "rules": {
+            "type-enum": [
+                2,
+                "always",
+                [
+                    "chore",
+                    "build",
+                    "ci",
+                    "docs",
+                    "feat",
+                    "fix",
+                    "perf",
+                    "refactor",
+                    "revert",
+                    "style",
+                    "test",
+                    "types",
+                    "wip"
+                ]
+            ]
+        }
+    },
+    "ava": {
+        "extensions": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ]
+    }
+}
