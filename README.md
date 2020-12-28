@@ -4,7 +4,7 @@
 > a modern twitter api wrapper
 
 ## Installation
-Install with [npm](https://www.npmjs.com/) / [yarn](https://yarnpkg.com) / [pnpm](https://pnpm.js.org/)#
+Install with [npm](https://www.npmjs.com/) / [yarn](https://yarnpkg.com) / [pnpm](https://pnpm.js.org/)
 ### Stable:
 ```sh
 npm install @fyko/twitter
