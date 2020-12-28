@@ -1,9 +1,9 @@
 import ava from "ava";
-import { Twitter } from "../src";
+import { Client } from "../src";
 import { config } from "./config";
 
 ava("attempt settings fetch", async (test) => {
-  const client = new Twitter(config);
+  const client = new Client(config);
   try {
     const res = await client.get<any>("/account/settings");
     console.dir(res);

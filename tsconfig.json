@@ -12,6 +12,7 @@
 		"module": "commonjs",
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
+		"outDir": "dist",
 		"removeComments": false,
 		"sourceMap": true,
 		"strictNullChecks": true,
@@ -19,9 +20,9 @@
 	},
 	"exclude": [
 		"node_modules",
+		"tests"
 	],
 	"include": [
 		"src",
-		"tests",
 	]
 }
