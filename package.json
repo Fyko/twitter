@@ -4,7 +4,7 @@
     "description": "A modern Twitter API wrapper.",
     "author": "Carter Himmel",
     "main": "dist/src/index.js",
-    "license": "Apache-2.0",
+    "license": "MIT",
     "files": [
         "/dist",
         "LICENSE",
